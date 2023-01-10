@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jimmy">
+    
+    <title>
+        
+            数据结构与算法之栈 |
+        
+        积   木
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不积硅步，无以至千里。不积小流，无以成江海。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                积   木
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                全部
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">全部</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">数据结构与算法之栈</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jimmy</span>
+                        
+                            <span class="author-label">Author</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-13 13:48:28
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><ul>
+<li><p>栈是一种单边的操作，数据的存入（压栈）和数据的取出（出栈）都是在同一端操作的，即栈顶；</p>
+</li>
+<li><p>栈是一种 <strong>先进后出</strong> 的线性表。栈元素按自顶向下压栈装入到栈内，从栈顶弹出元素；</p>
+</li>
+</ul>
+<p><img src="1.png" alt="栈操作"></p>
+<h2 id="栈的抽象类"><a href="#栈的抽象类" class="headerlink" title="栈的抽象类"></a>栈的抽象类</h2><p>栈的抽象类描述了对栈的操作，类型如下：</p>
+<p><em>stack.h</em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">Stack</span>() &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span>  <span class="title">size</span><span class="params">()</span> <span class="keyword">const</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> T&amp; <span class="title">top</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">const</span> T&amp; theElement)</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="栈的数组描述"><a href="#栈的数组描述" class="headerlink" title="栈的数组描述"></a>栈的数组描述</h1><p>把数组索引为0的位置作为栈底，把数组末尾作为栈顶。</p>
+<p>那么所有入栈和出栈的操作均是对数组末尾的元素进行操作，压栈和出栈的时间复杂度为O(1)。</p>
+<p><img src="2.png" alt="数组描述的栈"></p>
+<h2 id="类定义"><a href="#类定义" class="headerlink" title="类定义"></a>类定义</h2><p><em>array_stack.h</em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">arrayStack</span> :</span> <span class="keyword">public</span> Stack&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="built_in">arrayStack</span>(<span class="keyword">int</span> initialCapacity = <span class="number">10</span>);</span><br><span class="line">      ~<span class="built_in">arrayStack</span>() &#123;<span class="keyword">delete</span> [] stack;&#125;</span><br><span class="line">      <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;<span class="keyword">return</span> stackTop == <span class="number">-1</span>;&#125;</span><br><span class="line">      <span class="function"><span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">      	<span class="keyword">return</span> stackTop + <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="function">T&amp; <span class="title">top</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">      	<span class="keyword">if</span> (stackTop == <span class="number">-1</span>)</span><br><span class="line">        	<span class="keyword">throw</span> <span class="built_in">stackEmpty</span>();</span><br><span class="line">        <span class="keyword">return</span> stack[stackTop];</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span></span><br><span class="line"><span class="function">      </span>&#123;</span><br><span class="line">      	<span class="keyword">if</span> (stackTop == <span class="number">-1</span>)</span><br><span class="line">        	<span class="keyword">throw</span> <span class="built_in">stackEmpty</span>();</span><br><span class="line">        stack[stackTop--].~<span class="built_in">T</span>();  <span class="comment">// destructor for T</span></span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">const</span> T&amp; theElement)</span></span>;</span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">      <span class="keyword">int</span> stackTop;         <span class="comment">// current top of stack</span></span><br><span class="line">      <span class="keyword">int</span> arrayLength;      <span class="comment">// stack capacity</span></span><br><span class="line">      T *stack;             <span class="comment">// element array</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类实现"><a href="#类实现" class="headerlink" title="类实现"></a>类实现</h2><p><em>array_stack.h</em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line">arrayStack&lt;T&gt;::<span class="built_in">arrayStack</span>(<span class="keyword">int</span> initialCapacity)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Constructor.</span></span><br><span class="line">    <span class="keyword">if</span> (initialCapacity &lt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ostringstream s;</span><br><span class="line">        s &lt;&lt; <span class="string">&quot;Initial capacity = &quot;</span> &lt;&lt; initialCapacity &lt;&lt; <span class="string">&quot; Must be &gt; 0&quot;</span>;</span><br><span class="line">        <span class="keyword">throw</span> <span class="built_in">illegalParameterValue</span>(s.<span class="built_in">str</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    arrayLength = initialCapacity;</span><br><span class="line">    stack = <span class="keyword">new</span> T[arrayLength];</span><br><span class="line">    stackTop = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="keyword">void</span> arrayStack&lt;T&gt;::<span class="built_in">push</span>(<span class="keyword">const</span> T&amp; theElement)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Add theElement to stack.</span></span><br><span class="line">    <span class="keyword">if</span> (stackTop == arrayLength - <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// no space, double capacity</span></span><br><span class="line">        <span class="built_in">changeLength1D</span>(stack, arrayLength, <span class="number">2</span> * arrayLength);</span><br><span class="line">        arrayLength *= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// add at stack top</span></span><br><span class="line">    stack[++stackTop] = theElement;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="栈的链表描述"><a href="#栈的链表描述" class="headerlink" title="栈的链表描述"></a>栈的链表描述</h1><p>栈的链表描述是把链表的头节点位置作为栈顶；</p>
+<p>那么，所有入栈和出栈的操作均是对链表头节点进行的操作，压栈和出栈的时间复杂度为 O(1). </p>
+<p><img src="3.png" alt="栈链表操作"></p>
+<h2 id="类定义-1"><a href="#类定义-1" class="headerlink" title="类定义"></a>类定义</h2><p><em>chain_stack.h</em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChainStack</span>  :</span>  <span class="keyword">public</span> Stack&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">    <span class="built_in">ChainStack</span>(<span class="keyword">int</span> init_capacity = <span class="number">10</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        _stack_top = <span class="literal">nullptr</span>;</span><br><span class="line">        _stack_size = init_capacity;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ~<span class="built_in">ChainStack</span>();</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;    <span class="keyword">return</span> _stack_size == <span class="number">0</span>;    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span>  <span class="title">size</span><span class="params">()</span> <span class="keyword">const</span>  </span>&#123;    <span class="keyword">return</span> _stack_size;     &#125;</span><br><span class="line">    <span class="function">T&amp; <span class="title">top</span><span class="params">()</span>    </span>&#123;   <span class="keyword">return</span> <span class="keyword">this</span>-&gt;_stack_top-&gt;element;   &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">const</span> T&amp; theElement)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        _stack_top = <span class="keyword">new</span> ChainNode&lt;T&gt; (theElement, _stack_top);</span><br><span class="line">        _stack_size ++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    ChainNode&lt;T&gt; * _stack_top;</span><br><span class="line">    <span class="keyword">int</span> _stack_size;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类实现-1"><a href="#类实现-1" class="headerlink" title="类实现"></a>类实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line">ChainStack&lt;T&gt;::~<span class="built_in">ChainStack</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(_stack_top != <span class="literal">nullptr</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        ChainNode&lt;T&gt; * next_node = _stack_top-&gt;next;</span><br><span class="line">        <span class="keyword">delete</span> _stack_top;</span><br><span class="line">        _stack_top = next_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="keyword">void</span> ChainStack&lt;T&gt;::<span class="built_in">pop</span>()</span><br><span class="line">&#123;</span><br><span class="line">    ChainNode&lt;T&gt; * next_node = _stack_top-&gt;next;</span><br><span class="line">    <span class="keyword">delete</span> _stack_top;</span><br><span class="line">    _stack_top = next_node;</span><br><span class="line">    _stack_size--;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：数据结构与算法之栈</li>
+        <li>Post author：Jimmy</li>
+        <li>Create time：2021-10-13 13:48:28</li>
+        <li>
+            Post link：https://www.gogojimmy.top/2021/10/13/数据结构与算法之栈/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E9%98%9F%E5%88%97/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数据结构与算法之队列</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E7%BA%BF%E6%80%A7%E8%A1%A8/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数据结构与算法之线性表</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jimmy</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88"><span class="nav-number">1.</span> <span class="nav-text">栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">栈的抽象类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E6%95%B0%E7%BB%84%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">栈的数组描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">类定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">类实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E9%93%BE%E8%A1%A8%E6%8F%8F%E8%BF%B0"><span class="nav-number">3.</span> <span class="nav-text">栈的链表描述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%AE%9A%E4%B9%89-1"><span class="nav-number">3.1.</span> <span class="nav-text">类定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">3.2.</span> <span class="nav-text">类实现</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

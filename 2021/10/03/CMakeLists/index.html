@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jimmy">
+    
+    <title>
+        
+            CMakeLists |
+        
+        积   木
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不积硅步，无以至千里。不积小流，无以成江海。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                积   木
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                全部
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">全部</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">CMakeLists</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jimmy</span>
+                        
+                            <span class="author-label">Author</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-03 00:41:55
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/cmake/">cmake</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="最小CMakeLists"><a href="#最小CMakeLists" class="headerlink" title="最小CMakeLists"></a>最小CMakeLists</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cmake_minimum_required</span>(VERSION <span class="number">3.15</span>)        <span class="comment">//指定CMAKE最小的版本号</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">project</span>(main)                               <span class="comment">//设置项目的名称</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">aux_source_directory</span>($&#123;CMAKE_CURRENT_SOURCE_DIR&#125; SRC)       <span class="comment">//将CMAKE文件夹下的文件都加到SRC里</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">add_executable</span>($&#123;PROJECT_NAME&#125; $&#123;SRC&#125;)      <span class="comment">//生成可执行文件</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="包含头文件"><a href="#包含头文件" class="headerlink" title="包含头文件"></a>包含头文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">include_directories</span>(</span><br><span class="line">    $&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span><br><span class="line">    $&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/dir </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="指定编译包含的源文件"><a href="#指定编译包含的源文件" class="headerlink" title="指定编译包含的源文件"></a>指定编译包含的源文件</h2><h3 id="搜索CMAKE所在文件夹下的所有CPP文件"><a href="#搜索CMAKE所在文件夹下的所有CPP文件" class="headerlink" title="搜索CMAKE所在文件夹下的所有CPP文件"></a>搜索CMAKE所在文件夹下的所有CPP文件</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">aux_source_directory</span>($&#123;CMAKE_CURRENT_SOURCE_DIR&#125; SRC)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="明确指定包含哪些文件"><a href="#明确指定包含哪些文件" class="headerlink" title="明确指定包含哪些文件"></a>明确指定包含哪些文件</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">add_library</span>(demo demo.cpp test.cpp util.cpp)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="查找指定的库文件"><a href="#查找指定的库文件" class="headerlink" title="查找指定的库文件"></a>查找指定的库文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">find_package</span>( OpenCV REQUIRED )</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="设置链接库搜索目录"><a href="#设置链接库搜索目录" class="headerlink" title="设置链接库搜索目录"></a>设置链接库搜索目录</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">link_directories</span>(</span><br><span class="line">    $&#123;CMAKE_CURRENT_BINARY_DIR&#125;/libs</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="设置目标需要链接的库"><a href="#设置目标需要链接的库" class="headerlink" title="设置目标需要链接的库"></a>设置目标需要链接的库</h2><p>在 Windows 下，系统会根据链接库目录，搜索xxx.lib 文件，Linux 下会搜索 xxx.so 或者 xxx.a 文件，如果都存在会优先链接动态库（so 后缀）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">target_link_libraries</span>( # 目标库</span><br><span class="line">                       demo</span><br><span class="line"> </span><br><span class="line">                       # 目标库需要链接的库</span><br><span class="line">                       <span class="meta"># log-lib 是上面 find_library 指定的变量名</span></span><br><span class="line">                       $&#123;log-lib&#125; </span><br><span class="line">                     )</span><br></pre></td></tr></table></figure>
+
+
+<p>或</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">target_link_libraries</span>(</span><br><span class="line">                       $&#123;PROJECT_NAME&#125;</span><br><span class="line">                       </span><br><span class="line">                       libs</span><br><span class="line">                     )</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="指定链接库"><a href="#指定链接库" class="headerlink" title="指定链接库"></a>指定链接库</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">target_link_libraries</span>(demo libface.a) # 链接libface.<span class="function">a</span></span><br><span class="line"><span class="function"><span class="title">target_link_libraries</span><span class="params">(demo libface.so)</span> # 链接libface.so</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="指定全路径"><a href="#指定全路径" class="headerlink" title="指定全路径"></a>指定全路径</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">target_link_libraries</span>(demo $&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/libs/libface.a)</span><br><span class="line"><span class="built_in">target_link_libraries</span>(demo $&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/libs/libface.so)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="链接多个库"><a href="#链接多个库" class="headerlink" title="链接多个库"></a>链接多个库</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">target_link_libraries</span>(demo</span><br><span class="line">    $&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/libs/libface.a</span><br><span class="line">    boost_system.a</span><br><span class="line">    boost_thread</span><br><span class="line">    pthread)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">add_dependencies</span>($&#123;PROJECT_NAME&#125; dep_lib)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="添加子文件夹"><a href="#添加子文件夹" class="headerlink" title="添加子文件夹"></a>添加子文件夹</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">add_subdirectory</span>(dir_name)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="打印消息"><a href="#打印消息" class="headerlink" title="打印消息"></a>打印消息</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">message</span>(<span class="string">&quot;show message&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="编译生成"><a href="#编译生成" class="headerlink" title="编译生成"></a>编译生成</h2><ol>
+<li><p>编译生成二进制bin文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add_executable(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SRC&#125;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>编译生成库文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">add_library(<span class="variable">$&#123;PROJECT_NAME&#125;</span> SHARED      <span class="comment"># 编译生成动态库 .so</span></span><br><span class="line">	<span class="variable">$&#123;ALL_SRC&#125;</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">add_library(<span class="variable">$&#123;PROJECT_NAME&#125;</span> STATIC      <span class="comment"># 编译生成静态库 .a</span></span><br><span class="line">	<span class="variable">$&#123;ALL_SRC&#125;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：CMakeLists</li>
+        <li>Post author：Jimmy</li>
+        <li>Create time：2021-10-03 00:41:55</li>
+        <li>
+            Post link：https://www.gogojimmy.top/2021/10/03/CMakeLists/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/03/ROS%E5%85%A5%E9%97%A8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">移动机器人开发之ROS入门</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/03/%E9%80%9A%E8%BF%87vscode%20Remote-SSH%E5%BC%80%E5%8F%91Linux/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">通过vscode Remote-SSH开发Linux</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jimmy</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8FCMakeLists"><span class="nav-number">1.</span> <span class="nav-text">最小CMakeLists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">包含头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E5%8C%85%E5%90%AB%E7%9A%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">指定编译包含的源文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2CMAKE%E6%89%80%E5%9C%A8%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89CPP%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">搜索CMAKE所在文件夹下的所有CPP文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E6%8C%87%E5%AE%9A%E5%8C%85%E5%90%AB%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6"><span class="nav-number">3.2.</span> <span class="nav-text">明确指定包含哪些文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%8C%87%E5%AE%9A%E7%9A%84%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-number">4.</span> <span class="nav-text">查找指定的库文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%93%BE%E6%8E%A5%E5%BA%93%E6%90%9C%E7%B4%A2%E7%9B%AE%E5%BD%95"><span class="nav-number">5.</span> <span class="nav-text">设置链接库搜索目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%9B%AE%E6%A0%87%E9%9C%80%E8%A6%81%E9%93%BE%E6%8E%A5%E7%9A%84%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">设置目标需要链接的库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="nav-number">6.1.</span> <span class="nav-text">指定链接库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%85%A8%E8%B7%AF%E5%BE%84"><span class="nav-number">6.2.</span> <span class="nav-text">指定全路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E5%A4%9A%E4%B8%AA%E5%BA%93"><span class="nav-number">6.3.</span> <span class="nav-text">链接多个库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="nav-number">7.</span> <span class="nav-text">添加依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%AD%90%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">8.</span> <span class="nav-text">添加子文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF"><span class="nav-number">9.</span> <span class="nav-text">打印消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%94%9F%E6%88%90"><span class="nav-number">10.</span> <span class="nav-text">编译生成</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

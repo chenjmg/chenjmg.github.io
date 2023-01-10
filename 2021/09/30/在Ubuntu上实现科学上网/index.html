@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jimmy">
+    
+    <title>
+        
+            在Ubuntu上实现科学上网 |
+        
+        积   木
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不积硅步，无以至千里。不积小流，无以成江海。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                积   木
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                全部
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">全部</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">在Ubuntu上实现科学上网</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jimmy</span>
+                        
+                            <span class="author-label">Author</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-30 10:33:06
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Linux%E7%AC%94%E8%AE%B0/">Linux笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>本文将实现在能够在 Ubuntu 上科学上网。</p>
+<h1 id="获取SSR客户端"><a href="#获取SSR客户端" class="headerlink" title="获取SSR客户端"></a>获取SSR客户端</h1><p>这是<a class="link"   target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr" >仓库的链接<i class="fas fa-external-link-alt"></i></a>，访问仓库或者直接在系统里用 <code>git clone</code>，克隆地址：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com:shadowsocksrr/shadowsocksr.git</span><br></pre></td></tr></table></figure>
+<p>我把它克隆到 /home/ 目录下。它的文件目录如下：<br><img src="1.png" alt="Snipaste_2021-09-24_14-12-11.png"><br>克隆好之后，不用管它。</p>
+<h1 id="配置SSR"><a href="#配置SSR" class="headerlink" title="配置SSR"></a>配置SSR</h1><p>SSR 的配置和启动是通过一个 bash 脚本的。<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/the0demiurge/CharlesScripts/blob/master/charles/bin/ssr" >这是脚本的GIT仓库地址。<i class="fas fa-external-link-alt"></i></a>​<br>可以是克隆或者是复制粘贴，将仓库的脚本保存成 ssr.sh 到本地。<br>将脚本文件放到 <strong>/usr/local/bin</strong> 路径下。<br>首次使用需要执行安装，注意添加脚本的可执行权限。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssr.sh install</span><br></pre></td></tr></table></figure>
+<p>对了，如果脚本文件名为 <strong>ssr</strong>，那么命令就可以只是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssr install</span><br></pre></td></tr></table></figure>
+<p>接下来开始配置节点。<br>执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssr.sh config</span><br></pre></td></tr></table></figure>
+<p>弹出一个配置文件，去网站上获取节点的信息，比如小猴子上，可以查看到类似如下的信息：<br><img src="2.png" alt="image.png"><br>把这段 json 文件复制到 config 打开的窗口里，替换掉就ok了。<br>​</p>
+<h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><p>打开一个终端，在终端中执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssr.sh start</span><br></pre></td></tr></table></figure>
+<p>根据节点信息的不同，可能可以看到下面这样的信息：<br><img src="3.png" alt="image.png"><br>这时候说明 SSR 已经启动了，但是这时候还没法实现科学上网，还需要给系统指条路。<br>​</p>
+<p>在启动的时候可能会报 ssr.sh 第80行错误，这是因为没有安装 python 或者需要设置一下python 的软连接。<br>首先，确认你安装了 python：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /usr/bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ls python</span><br></pre></td></tr></table></figure>
+<p>我这里出现了 python3，因为我安装的是 python3.<br><img src="4.png" alt="image.png"><br>设置 python 的软链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ln -sf python3 python</span><br></pre></td></tr></table></figure>
+<p>​</p>
+<h1 id="设置系统全局代理"><a href="#设置系统全局代理" class="headerlink" title="设置系统全局代理"></a>设置系统全局代理</h1><p>进入 Ubuntu 系统。打开 设置 -&gt; 网络 -&gt; 网络代理。<br><img src="5.png" alt="image.png"><br>如下设置。<br><img src="6.png" alt="image.png"><br>OK。打开浏览器试试。<br><img src="7.png" alt="image.png"></p>
+<h1 id="使用浏览器插件设置自动代理"><a href="#使用浏览器插件设置自动代理" class="headerlink" title="使用浏览器插件设置自动代理"></a>使用浏览器插件设置自动代理</h1><p>如果是使用系统的代理方式连接网络，会发现访问国内的网站时，连接很慢，因此国内的网站走的也是代理上的，而这是没有必要的，甚至如此缓慢的连接速度令人恶心。<br>于是，我们需要浏览器插件来帮忙。在 Chrome 商店搜索插件 <code>Proxy SwitchyOmega</code> 。<br><img src="8.png" alt="image.png"><br>进入到 SwitchyOmega 插件的选项中，插件默认提供了两个情景模式，一个是 _proxy _,一个是 _auto switch _。<br>我们使用 <em>proxy</em> 设置全局代理，使用 _auto switch <em>设置自动代理。<br>将</em> proxy _的设置修改为如下：<br><img src="9.png" alt="image.png"><br>设置 _auto switch _还需要一个工具，<code>gfwlist</code>，仓库地址<a class="link"   target="_blank" rel="noopener" href="https://github.com/gfwlist/gfwlist" >是这个<i class="fas fa-external-link-alt"></i></a>。<br>先回到 _auto switch _设置页面。<br>点击添加规则列表，添加一个规则。<br><img src="10.png" alt="image.png"><br>新增加的规则设置如下：<br><img src="11.png" alt="image.png"><br>其中，箭头 3 指向的设置项为规则列表的来源，规则列表来源来源于 <code>gfwlist</code> 里，在这里：<br><img src="12.png" alt="image.png"><br>这里直接贴出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</span><br></pre></td></tr></table></figure>
+<p>最后点击立即更新情景模式，插件会自动下载规则，就OK了。<br>哦对了，记得更改系统里的网络代理，改为自动。<br><img src="13.png" alt="image.png"><br>现在，你可以选择 _proxy _，仍然走全局代理，或者选择 _auto switch，_走自动代理。<br>​</p>
+<h1 id="让终端也走代理"><a href="#让终端也走代理" class="headerlink" title="让终端也走代理"></a>让终端也走代理</h1><p>你可能仍然发现，执行 <code>git clone</code> 时还是很慢或者连接失败，因为此时的代理与终端是没有关系的，终端走的仍然不是代理，也就是说无论设置的系统全局代理还是自动代理，均与终端使用的网络没有关系。<br>因此，需要借助一个工具，叫做 <strong>proxychain</strong>。<br>GIT 仓库地址<a class="link"   target="_blank" rel="noopener" href="https://github.com/rofl0r/proxychains-ng" >看这里<i class="fas fa-external-link-alt"></i></a>，或者可以直接克隆：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> git@github.com:rofl0r/proxychains-ng.git</span><br></pre></td></tr></table></figure>
+<p>克隆到随便一个地方都可以。<br>这个工具需要编译一下。<br>切换到目录下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> proxychains-ng</span><br></pre></td></tr></table></figure>
+<p>执行configure文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure --prefix=/usr --sysconfdir=/etc</span><br></pre></td></tr></table></figure>
+<p>完成后，make</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
+<p>进入到 <em>src/</em> 下，打开 proxychains.conf 文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim src/proxychains.conf</span><br></pre></td></tr></table></figure>
+<p>找到文件的最后一行，原内容是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socks4 	127.0.0.1 9050</span><br></pre></td></tr></table></figure>
+<p>修改成：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socks5 	127.0.0.1 1080</span><br></pre></td></tr></table></figure>
+<p>返回到根目录下，执行安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install-config</span><br></pre></td></tr></table></figure>
+<p>使用方法：<br>在 <code>git clone</code> 前上 <code>proxychains4</code> 即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ proxychain4 git <span class="built_in">clone</span> git@github.com:shadowsocksrr/shadowsocksr.git</span><br></pre></td></tr></table></figure>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>​</p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><p>附录内容是<strong>启动SSR</strong>里的那个脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># 作者：老徐</span></span><br><span class="line"><span class="comment"># SSR免费分享网站（所有帐号均来源于网上别人的分享）：http://ss.pythonic.life</span></span><br><span class="line"><span class="comment"># 源代码主页：https://github.com/the0demiurge</span></span><br><span class="line"><span class="comment"># 访问https://github.com/the0demiurge/CharlesScripts/blob/master/charles/bin/ssr获取本脚本的最新版</span></span><br><span class="line"><span class="comment"># 使用方法：把该脚本放到$PATH里面并加入可执行权限就行（比如说放到/usr/local/bin）</span></span><br><span class="line"><span class="comment"># 首次使用输入ssr install后安装时会自动安装到 $HOME/.local/share/shadowsocksr</span></span><br><span class="line"><span class="comment"># 输入ssr config进行配置，输入JSON格式的配置文件</span></span><br><span class="line"><span class="comment"># 输入ssr uninstall卸载</span></span><br><span class="line"><span class="comment"># 输入ssr help 展示帮助信息</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"><span class="keyword">if</span> [ -z <span class="string">&quot;<span class="variable">$EDITOR</span>&quot;</span> ]; <span class="keyword">then</span></span><br><span class="line">    EDITOR=vi</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">WEBSITE=http://ss.pythonic.life</span><br><span class="line">BRANCH=manyuser</span><br><span class="line">GIT_REPO=https://github.com/shadowsocksrr/shadowsocksr.git</span><br><span class="line">INSTALL_PATH=<span class="variable">$HOME</span>/.<span class="built_in">local</span>/share/shadowsocksr</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_help</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> ShadowSocksR python client tool</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="keyword">if</span> you have not installed ssr, run \`ssr install\` first</span><br><span class="line">    <span class="built_in">echo</span> Usage:</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr help&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\n&quot;</span> <span class="string">&quot;Install/Uninstall&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr install      install shadowsocksr client&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr uninstall    uninstall shadowsocksr client&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\n&quot;</span> <span class="string">&quot;Config and Subscribe&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr update       update subscription from <span class="variable">$WEBSITE</span>&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr config       edit config.json&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr xclip        paste configs from clipboard to config.json&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\n&quot;</span> <span class="string">&quot;Start/Stop/Restart&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr start        start the shadowsocks service&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr stop         stop the shadowsocks service&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr restart      restart the shadowsocks service&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\n&quot;</span> <span class="string">&quot;Testing and Maintenance&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr test         get ip from cip.cc using socks5 proxy&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr log          cat the log of shadowsocks&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr shell        cd into ssr installation dir&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;\t&quot;</span> <span class="string">&quot;ssr clean        clean ssr configuration backups&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_install</span></span>() &#123;</span><br><span class="line">    git <span class="built_in">clone</span> -b <span class="variable">$BRANCH</span> <span class="variable">$GIT_REPO</span> <span class="variable">$INSTALL_PATH</span></span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;Install finished!\nYou can visit my website <span class="variable">$WEBSITE</span> to acquire free ssr configs&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_uninstall</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Danger! are you to remove <span class="variable">$INSTALL_PATH</span> forever?(y/N)&quot;</span></span><br><span class="line">    <span class="built_in">read</span> doit</span><br><span class="line">    <span class="keyword">if</span> [ <span class="variable">$doit</span> == <span class="string">&#x27;y&#x27;</span> ]; <span class="keyword">then</span> rm -rvf <span class="variable">$INSTALL_PATH</span>; <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_test</span></span>() &#123;</span><br><span class="line">    <span class="built_in">echo</span> Testing Connection...</span><br><span class="line">    <span class="keyword">if</span> [[ ! -z $(<span class="built_in">which</span> jq 2&gt;/dev/null) ]]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&#x27;jq in use&#x27;</span></span><br><span class="line">        PORT=$(jq .local_port <span class="variable">$INSTALL_PATH</span>/config.json)</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        PORT=$(sed -r <span class="string">&#x27;s/\/\/.*$|\s+//g&#x27;</span> <span class="variable">$INSTALL_PATH</span>/config.json | grep -oP <span class="string">&#x27;(?&lt;!//)(?&lt;=&quot;local_port&quot;:)\d+&#x27;</span>)</span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;local_port is <span class="variable">$PORT</span>; if any exceptions orrured, please install jq&quot;</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&#x27;connection information:&#x27;</span></span><br><span class="line">    curl ipinfo.io --socks5 localhost:<span class="variable">$PORT</span></span><br><span class="line">    <span class="built_in">echo</span></span><br><span class="line">    curl cip.cc --socks5 localhost:<span class="variable">$PORT</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ $? == 0 ]; <span class="keyword">then</span></span><br><span class="line">        <span class="keyword">if</span> [[ -z $(<span class="built_in">which</span> proxychains4 2&gt;/dev/null) ]]; <span class="keyword">then</span></span><br><span class="line">            <span class="built_in">echo</span> <span class="string">&quot;You may install proxychains4 and configure it properly to test net delay&quot;</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">echo</span> -e <span class="string">&#x27;\nChecking delay...&#x27;</span></span><br><span class="line">            proxychains4 ping -c 5 cip.cc</span><br><span class="line">        <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_start</span></span>() &#123;</span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$INSTALL_PATH</span>/shadowsocks/</span><br><span class="line">    python local.py -d start --pid-file=<span class="variable">$INSTALL_PATH</span>/ssr.pid --log-file=<span class="variable">$INSTALL_PATH</span>/ssr.log</span><br><span class="line">    sleep 1</span><br><span class="line">    ssr_test</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_stop</span></span>() &#123;</span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$INSTALL_PATH</span>/shadowsocks/</span><br><span class="line">    python local.py -d stop --pid-file=<span class="variable">$INSTALL_PATH</span>/ssr.pid --log-file=<span class="variable">$INSTALL_PATH</span>/ssr.log</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_restart</span></span>() &#123;</span><br><span class="line">    ssr_stop</span><br><span class="line">    ssr_start</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_config</span></span>() &#123;</span><br><span class="line">    <span class="variable">$EDITOR</span> <span class="variable">$INSTALL_PATH</span>/config.json</span><br><span class="line">    ssr_restart</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BLOCKED=<span class="string">&#x27;</span></span><br><span class="line"><span class="string">Update failed! For more information, see</span></span><br><span class="line"><span class="string">https://github.com/the0demiurge/ShadowSocksShare-OpenShift/issues/17</span></span><br><span class="line"><span class="string">And edit `$WEBSITE` in this script.&#x27;</span></span><br><span class="line"></span><br><span class="line">ISSUE=<span class="string">&#x27;</span></span><br><span class="line"><span class="string">The response was empty, try it 10 mins later or report it on</span></span><br><span class="line"><span class="string">https://github.com/the0demiurge/CharlesScripts/issues&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_update</span></span>() &#123;</span><br><span class="line">    JSON=$(curl -L <span class="variable">$WEBSITE</span>/json)</span><br><span class="line">    <span class="comment"># If failed</span></span><br><span class="line">    <span class="keyword">case</span> $? <span class="keyword">in</span></span><br><span class="line">    0) ;;</span><br><span class="line">    *)</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="variable">$BLOCKED</span></span><br><span class="line">        <span class="built_in">exit</span> $?</span><br><span class="line">        ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># If json is empty</span></span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$JSON</span> <span class="keyword">in</span></span><br><span class="line">    <span class="string">&#x27;Not Found&#x27;</span>)</span><br><span class="line">        <span class="built_in">echo</span> -e <span class="variable">$BLOCKED</span></span><br><span class="line">        <span class="built_in">exit</span> $?</span><br><span class="line">        ;;</span><br><span class="line">    <span class="string">&#x27;&#x27;</span> | <span class="string">&#x27;&#123;&#125;&#x27;</span>)</span><br><span class="line">        <span class="built_in">echo</span> <span class="variable">$ISSUE</span></span><br><span class="line">        <span class="built_in">exit</span> 2</span><br><span class="line">        ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line"></span><br><span class="line">    mv <span class="variable">$INSTALL_PATH</span>/config.json <span class="variable">$INSTALL_PATH</span>/config.json.bak.$(date +%y-%m-%d-%T)</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;<span class="variable">$JSON</span>&quot;</span> | tee <span class="variable">$INSTALL_PATH</span>/config.json</span><br><span class="line">    ssr_restart</span><br><span class="line">    <span class="built_in">echo</span> -e <span class="string">&quot;Updated from <span class="variable">$WEBSITE</span>&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_xclip</span></span>() &#123;</span><br><span class="line">    xclip -o | tee <span class="variable">$INSTALL_PATH</span>/config.json</span><br><span class="line">    ssr_restart</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_log</span></span>() &#123;</span><br><span class="line">    tail -f <span class="variable">$INSTALL_PATH</span>/ssr.log</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_shell</span></span>() &#123;</span><br><span class="line">    <span class="built_in">cd</span> <span class="variable">$INSTALL_PATH</span></span><br><span class="line">    <span class="variable">$SHELL</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_clean</span></span>() &#123;</span><br><span class="line">    rm -ri <span class="variable">$INSTALL_PATH</span>/config.json.bak.*</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">ssr_main</span></span>() &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">    <span class="built_in">help</span>) ssr_help ;;</span><br><span class="line">    install) ssr_install ;;</span><br><span class="line">    uninstall) ssr_uninstall ;;</span><br><span class="line">    update) ssr_update ;;</span><br><span class="line">    config) ssr_config ;;</span><br><span class="line">    xclip) ssr_xclip ;;</span><br><span class="line">    start) ssr_start ;;</span><br><span class="line">    stop) ssr_stop ;;</span><br><span class="line">    restart) ssr_restart ;;</span><br><span class="line">    <span class="built_in">test</span>) ssr_test ;;</span><br><span class="line">    <span class="built_in">log</span>) ssr_log ;;</span><br><span class="line">    shell) ssr_shell ;;</span><br><span class="line">    clean) ssr_clean ;;</span><br><span class="line">    *) ssr_help ;;</span><br><span class="line">    <span class="keyword">esac</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ssr_main <span class="variable">$1</span></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：在Ubuntu上实现科学上网</li>
+        <li>Post author：Jimmy</li>
+        <li>Create time：2021-09-30 10:33:06</li>
+        <li>
+            Post link：https://www.gogojimmy.top/2021/09/30/在Ubuntu上实现科学上网/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/03/Ubuntu%2020.04%20%E6%9B%B4%E6%8D%A2%E5%9B%BD%E5%86%85%E8%BD%AF%E4%BB%B6%E6%BA%90/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Ubuntu 20.04 更换国内软件源</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/29/%E4%BD%BF%E7%94%A8hexo%E5%88%9B%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">使用hexo创建个人博客</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jimmy</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96SSR%E5%AE%A2%E6%88%B7%E7%AB%AF"><span class="nav-number">1.</span> <span class="nav-text">获取SSR客户端</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AESSR"><span class="nav-number">2.</span> <span class="nav-text">配置SSR</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-number">3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">设置系统全局代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E8%AE%BE%E7%BD%AE%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">使用浏览器插件设置自动代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A9%E7%BB%88%E7%AB%AF%E4%B9%9F%E8%B5%B0%E4%BB%A3%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">让终端也走代理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%E5%BD%95"><span class="nav-number">8.</span> <span class="nav-text">附录</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

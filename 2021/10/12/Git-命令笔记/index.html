@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jimmy">
+    
+    <title>
+        
+            Git 命令笔记 |
+        
+        积   木
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不积硅步，无以至千里。不积小流，无以成江海。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                积   木
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                全部
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">全部</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Git 命令笔记</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jimmy</span>
+                        
+                            <span class="author-label">Author</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-12 15:52:58
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/Git/">Git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Git/">Git</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="1、获取SSH-Key"><a href="#1、获取SSH-Key" class="headerlink" title="1、获取SSH-Key"></a>1、获取SSH-Key</h2><h3 id="生成SSH-Key"><a href="#生成SSH-Key" class="headerlink" title="生成SSH-Key"></a>生成SSH-Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">&quot;youremail@youremail.com&quot;</span>  </span><br><span class="line"></span><br><span class="line"><span class="comment"># Generating public/private rsa key pair...</span></span><br><span class="line"><span class="comment"># 三次回车即可生成 ssh key</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="查看SSH-Key"><a href="#查看SSH-Key" class="headerlink" title="查看SSH-Key"></a>查看SSH-Key</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="comment"># ssh-rsa AAAAB3NzaC1yc2E... youremail@youremail.com</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="2、设置用户信息"><a href="#2、设置用户信息" class="headerlink" title="2、设置用户信息"></a>2、设置用户信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name  <span class="string">&quot;yourname&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;youremail@youremail.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3、初始化本地库"><a href="#3、初始化本地库" class="headerlink" title="3、初始化本地库"></a>3、初始化本地库</h2><h3 id="客户仓库"><a href="#客户仓库" class="headerlink" title="客户仓库"></a>客户仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> &lt;repository-url&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="本地添加远程仓库"><a href="#本地添加远程仓库" class="headerlink" title="本地添加远程仓库"></a>本地添加远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git remote add origin &lt;远程仓库地址&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="4、更新到远程仓库"><a href="#4、更新到远程仓库" class="headerlink" title="4、更新到远程仓库"></a>4、更新到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git add .    <span class="comment"># 指定更新内容    . 表示全部更新，test.txt 表示更新指定文件</span></span><br><span class="line">$ git commit -m <span class="string">&quot;一些注释说明&quot;</span>       <span class="comment"># 添加更新说明</span></span><br><span class="line">$ git push origin master            <span class="comment"># 执行更新操作</span></span><br><span class="line">$ git push -f origin master         <span class="comment"># 强制推送</span></span><br></pre></td></tr></table></figure>
+
+
+<p>工作区到暂存区 -&gt;  add</p>
+<p>从暂存区取消暂存 -&gt; restore –staged</p>
+<p>工作区更改，未暂存，取消工作区的更改  -&gt; restore</p>
+<h2 id="5、单个文件回退"><a href="#5、单个文件回退" class="headerlink" title="5、单个文件回退"></a>5、单个文件回退</h2><h3 id="1、查看文件的更改日志"><a href="#1、查看文件的更改日志" class="headerlink" title="1、查看文件的更改日志"></a>1、查看文件的更改日志</h3><h4 id="1、查看文件的全部更改日志"><a href="#1、查看文件的全部更改日志" class="headerlink" title="1、查看文件的全部更改日志"></a>1、查看文件的全部更改日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> [file name]</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2、查看文件最近n条日志"><a href="#2、查看文件最近n条日志" class="headerlink" title="2、查看文件最近n条日志"></a>2、查看文件最近n条日志</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> -n [file name]</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2、文件已修改，未暂存（未执行add）"><a href="#2、文件已修改，未暂存（未执行add）" class="headerlink" title="2、文件已修改，未暂存（未执行add）"></a>2、文件已修改，未暂存（未执行add）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git restore [file name]   //执行后直接更改工作区</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3、文件已修改，已暂存（已执行add，但是未commit）"><a href="#3、文件已修改，已暂存（已执行add，但是未commit）" class="headerlink" title="3、文件已修改，已暂存（已执行add，但是未commit）"></a>3、文件已修改，已暂存（已执行add，但是未commit）</h3><h4 id="1、取消暂存"><a href="#1、取消暂存" class="headerlink" title="1、取消暂存"></a>1、取消暂存</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git restore --staged [file name]</span><br></pre></td></tr></table></figure>
+
+
+<p>或者使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset HEAD [file name]</span><br><span class="line">$ git reset [file name]</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2、恢复到工作区"><a href="#2、恢复到工作区" class="headerlink" title="2、恢复到工作区"></a>2、恢复到工作区</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git restore [file name]</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="4、文件已提交，回退到某一个提交节点"><a href="#4、文件已提交，回退到某一个提交节点" class="headerlink" title="4、文件已提交，回退到某一个提交节点"></a>4、文件已提交，回退到某一个提交节点</h3><h4 id="1、先获取要回退的commit-id"><a href="#1、先获取要回退的commit-id" class="headerlink" title="1、先获取要回退的commit-id"></a>1、先获取要回退的commit-id</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --graph</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="2、从本地版本库中拉取到暂存区"><a href="#2、从本地版本库中拉取到暂存区" class="headerlink" title="2、从本地版本库中拉取到暂存区"></a>2、从本地版本库中拉取到暂存区</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git reset &lt;commit-id&gt; [file name]</span><br></pre></td></tr></table></figure>
+
+
+<p>执行后查看status，会出现一个暂存状态，一个更改状态</p>
+<p>暂存区现在存放的是回退前的状态</p>
+<p>更改状态是因为本地工作区与暂存区里的内容不一致</p>
+<h4 id="3、放弃暂存，恢复到回前状态"><a href="#3、放弃暂存，恢复到回前状态" class="headerlink" title="3、放弃暂存，恢复到回前状态"></a>3、放弃暂存，恢复到回前状态</h4><p>直接执行add</p>
+<p>或者执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git restore --staged [file name]</span><br></pre></td></tr></table></figure>
+
+
+<p>放弃暂存区</p>
+<h4 id="4、放弃本地的更改"><a href="#4、放弃本地的更改" class="headerlink" title="4、放弃本地的更改"></a>4、放弃本地的更改</h4><p>放弃本地的更改，使回退生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git restore [file name]</span><br></pre></td></tr></table></figure>
+
+
+<p>但是暂存区的更改还存在，再执行一次add和commit</p>
+<h2 id="6、分支操作"><a href="#6、分支操作" class="headerlink" title="6、分支操作"></a>6、分支操作</h2><h3 id="1、展示本地分支关联远程的操作"><a href="#1、展示本地分支关联远程的操作" class="headerlink" title="1、展示本地分支关联远程的操作"></a>1、展示本地分支关联远程的操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -vv</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2、列出所有远程分支"><a href="#2、列出所有远程分支" class="headerlink" title="2、列出所有远程分支"></a>2、列出所有远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -r</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="4、列出本地和远程的分支"><a href="#4、列出本地和远程的分支" class="headerlink" title="4、列出本地和远程的分支"></a>4、列出本地和远程的分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git brach -a</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5、查看本地分支与远程的关系"><a href="#5、查看本地分支与远程的关系" class="headerlink" title="5、查看本地分支与远程的关系"></a>5、查看本地分支与远程的关系</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git remote show origin</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="6、查看本地分支"><a href="#6、查看本地分支" class="headerlink" title="6、查看本地分支"></a>6、查看本地分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="7、创建本地分支"><a href="#7、创建本地分支" class="headerlink" title="7、创建本地分支"></a>7、创建本地分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="8、创建本地分支并切换到该分支"><a href="#8、创建本地分支并切换到该分支" class="headerlink" title="8、创建本地分支并切换到该分支"></a>8、创建本地分支并切换到该分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="9、删除本地分支"><a href="#9、删除本地分支" class="headerlink" title="9、删除本地分支"></a>9、删除本地分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="10、切换分支"><a href="#10、切换分支" class="headerlink" title="10、切换分支"></a>10、切换分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>或</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git switch &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="11、创建远程分支"><a href="#11、创建远程分支" class="headerlink" title="11、创建远程分支"></a>11、创建远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin &lt;<span class="built_in">local</span> branch name&gt;:&lt;remote branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="12、删除远程分支"><a href="#12、删除远程分支" class="headerlink" title="12、删除远程分支"></a>12、删除远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :&lt;remote branch name&gt;   // 推送一个空的本地分支到远程分支上，相当于删除</span><br></pre></td></tr></table></figure>
+
+
+<p>或</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;remote branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="13、关联远程分支"><a href="#13、关联远程分支" class="headerlink" title="13、关联远程分支"></a>13、关联远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch –set-upstream &lt;<span class="built_in">local</span> branch name&gt; origin/&lt;remote branch name&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="7、忽略文件"><a href="#7、忽略文件" class="headerlink" title="7、忽略文件"></a>7、忽略文件</h2><p>以 <code>.gitignore</code> 文件用以列出忽略的文件。</p>
+<h3 id="1、格式规范"><a href="#1、格式规范" class="headerlink" title="1、格式规范"></a>1、格式规范</h3><ul>
+<li>所有空行或者以 <code>#</code> 开头的行都会被GIT忽略；</li>
+<li>可以使用标准的glob 模式匹配，它会递归地应用在整个工作区中；</li>
+<li>匹配模式可以以 <code>/</code> 开头防止递归;</li>
+<li>匹配模式可以以 <code>/</code> 结尾指定目录;</li>
+<li>要忽略指定模式以外的文件或目录，可以在模式前加上叹号 <code>!</code> 取反;</li>
+</ul>
+<blockquote>
+<p>glob模式：</p>
+<ul>
+<li><code>*</code>          :  匹配多个任意字符；</li>
+<li><code>[abc]</code>  :  匹配 <code>[ ]</code>  里所列出的任意字符。[abc] 要么匹配 a，要么匹配 b， 要么匹配 c；</li>
+<li><code>?</code>          :  只匹配一个字符；</li>
+<li><code>[0-9]</code>  :  匹配所有从0到9之间的数字；</li>
+<li><code>**</code>        :  匹配任意中间的目录。<code>a/**/c</code> 匹配 a 文件夹下所有文件夹 c；</li>
+</ul>
+</blockquote>
+<h3 id="2、例子"><a href="#2、例子" class="headerlink" title="2、例子"></a>2、例子</h3><blockquote>
+<p>此部分参考于 《Pro Git》。<br>访问链接， <a class="link"   target="_blank" rel="noopener" href="https://github.com/github/gitignore" >查看不同语言的忽略文件<i class="fas fa-external-link-alt"></i></a>。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># 忽略所有的 .a 文件</span><br><span class="line">*.a</span><br><span class="line"></span><br><span class="line"># 但跟踪所有的 lib.a，即便你在前面忽略了 .a 文件</span><br><span class="line">!lib.a</span><br><span class="line"></span><br><span class="line"># 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO</span><br><span class="line">/TODO</span><br><span class="line"></span><br><span class="line"># 忽略任何目录下名为 build 的文件夹</span><br><span class="line">build/</span><br><span class="line">    </span><br><span class="line"># 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt</span><br><span class="line">doc<span class="comment">/*.txt</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"># 忽略 doc/ 目录及其所有子目录下的 .pdf 文件</span></span><br><span class="line"><span class="comment">doc/**/</span>*.pdf</span><br></pre></td></tr></table></figure>
+
+<h3 id="移除已跟踪的文件"><a href="#移除已跟踪的文件" class="headerlink" title="移除已跟踪的文件"></a>移除已跟踪的文件</h3><p>查看 git 中已经跟踪的文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git ls-tree -r &lt;branch_name&gt; --name-only</span><br></pre></td></tr></table></figure>
+
+<p>文件已经被提交过，但是在以后的修改中，希望不被继续跟踪。</p>
+<p>假设在 <code>.git</code> 同级的目录下，有个文件 <code>./main.cpp</code> 和 <code>./CODE/</code> 都是处于跟踪状态。现要移除跟踪。</p>
+<p>首先要在 <code>.gitignore</code> 文件中添加忽略。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">main.cpp</span><br><span class="line"></span><br><span class="line">CODE/</span><br></pre></td></tr></table></figure>
+
+<p>然后从缓存中删除文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rm -r --cached CODE/</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git rm --cached main.cpp</span><br></pre></td></tr></table></figure>
+<h2 id="8、git-log"><a href="#8、git-log" class="headerlink" title="8、git log"></a>8、git log</h2><h3 id="oneline"><a href="#oneline" class="headerlink" title="oneline"></a>oneline</h3><p>将每个commit压缩成一行显示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --oneline</span><br></pre></td></tr></table></figure>
+<p><img src="1.png" alt="image.png"></p>
+<h3 id="显示变更"><a href="#显示变更" class="headerlink" title="显示变更"></a>显示变更</h3><p>详细显示每次提交的差异。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> -p</span><br></pre></td></tr></table></figure>
+<p>列出每次提交变更的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> -<span class="built_in">stat</span></span><br></pre></td></tr></table></figure>
+<h2 id="shortlog"><a href="#shortlog" class="headerlink" title="shortlog"></a>shortlog</h2><p>列出所有分支的所有commit 的信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git shortlog</span><br></pre></td></tr></table></figure>
+<p><img src="2.png" alt="image.png"></p>
+<h3 id="graph"><a href="#graph" class="headerlink" title="graph"></a>graph</h3><p>图形化的方式显示迭代过程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> --graph</span><br></pre></td></tr></table></figure>
+
+<h2 id="10、rebase"><a href="#10、rebase" class="headerlink" title="10、rebase"></a>10、rebase</h2><h3 id="1-git-pull"><a href="#1-git-pull" class="headerlink" title="1.git pull"></a>1.git pull</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git pull = git fetch + git merge FETCH_HEAD </span><br><span class="line"></span><br><span class="line">$ git pull --rebase =  git fetch + git rebase FETCH_HEAD </span><br></pre></td></tr></table></figure>
+
+<h3 id="2-merge-和-rebase"><a href="#2-merge-和-rebase" class="headerlink" title="2.merge 和 rebase"></a>2.merge 和 rebase</h3><p>现在我们有这样的两个分支,test和master，提交如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">      D---E test</span><br><span class="line">     /</span><br><span class="line">A---B---C---F--- master</span><br></pre></td></tr></table></figure>
+
+<p>在master执行git merge test,然后会得到如下结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">      D--------E</span><br><span class="line">     /          \</span><br><span class="line">A---B---C---F----G---   test, master</span><br></pre></td></tr></table></figure>
+
+<p>在master执行git rebase test，然后得到如下结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A---B---D---E---C‘---F‘---   test, master</span><br></pre></td></tr></table></figure>
+
+<p>merge操作会生成一个新的节点，之前的提交分开显示。</p>
+<p>而rebase操作不会生成新的节点，是将两个分支融合成一个线性的提交。</p>
+<h3 id="3-rebase好处"><a href="#3-rebase好处" class="headerlink" title="3.rebase好处"></a>3.rebase好处</h3><p>想要更好的提交树，使用rebase操作会更好一点。<br>这样可以线性的看到每一次提交，并且没有增加提交节点。</p>
+<p>merge 操作遇到冲突的时候，当前merge不能继续进行下去。手动修改冲突内容后，add 修改，commit 就可以了。</p>
+<p>而rebase 操作的话，会中断rebase,同时会提示去解决冲突。<br>解决冲突后,将修改add后执行git rebase –continue继续操作，或者git rebase –skip忽略冲突。</p>
+<h2 id="10、stash暂存"><a href="#10、stash暂存" class="headerlink" title="10、stash暂存"></a>10、stash暂存</h2><p>stash可以将当前分支下的修改项保存起来，等恢复后继续使用。</p>
+<p>其中，这里的保存指的是将当前的修改内容保存到一个栈区，本地工作区的修改将会被撤销。但是修改项并不是被删除了，当你需要恢复时，可以将其从栈区恢复到本地工作区。</p>
+<h3 id="1-场景"><a href="#1-场景" class="headerlink" title="1.场景"></a>1.场景</h3><p>假设有这么一个场景。你在你的分支下编写着代码，你的功能还没开发完全，你并不想提交当前的修改项。</p>
+<p>此时你需要切换到另外一个分支。在此情况下，如果直接切换分支，将会产生冲突，或者git不允许你这么做。commit可以解决这个问题，但是你还不想提交。</p>
+<p>那么，你就可以用stash。</p>
+<h3 id="2-使用命令"><a href="#2-使用命令" class="headerlink" title="2.使用命令"></a>2.使用命令</h3><h4 id="1-git-stash"><a href="#1-git-stash" class="headerlink" title="1.git stash"></a>1.git stash</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将所有未提交的修改项（工作区和暂存区）保存至栈区中。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes not staged <span class="keyword">for</span> commit:</span><br><span class="line">  (use <span class="string">&quot;git add &lt;file&gt;...&quot;</span> to update what will be committed)</span><br><span class="line">  (use <span class="string">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes <span class="keyword">in</span> working directory)</span><br><span class="line"></span><br><span class="line">        modified:   src/test.cpp</span><br><span class="line">        modified:   src/test.h</span><br><span class="line"></span><br><span class="line">no changes added to commit (use <span class="string">&quot;git add&quot;</span> and/or <span class="string">&quot;git commit -a&quot;</span>)</span><br><span class="line"></span><br><span class="line">$ git stash</span><br><span class="line">Saved working directory and index state WIP on master: b2f489c second</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working tree clean</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-git-stash-save"><a href="#2-git-stash-save" class="headerlink" title="2.git stash save"></a>2.git stash save</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash save <span class="string">&quot;save-log&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>其作用与 <code>git stash</code> 相同，区别是 <code>save</code> 可以保存注释。</p>
+</blockquote>
+<h4 id="3-git-stash-list"><a href="#3-git-stash-list" class="headerlink" title="3.git stash list"></a>3.git stash list</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看stash的列表</p>
+</blockquote>
+<h4 id="4-git-stash-pop"><a href="#4-git-stash-pop" class="headerlink" title="4.git stash pop"></a>4.git stash pop</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将保存在stash栈区的内容弹出，删除，并应用到当前的分支上。</p>
+</blockquote>
+<p>注意，stash用的是栈，保留栈先进后出的规则。即先保存的stash后弹出。</p>
+<h4 id="5-git-stash-apply"><a href="#5-git-stash-apply" class="headerlink" title="5.git stash apply"></a>5.git stash apply</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash apply</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将保存在stash栈区的内容弹出，并应用到当前的分支上。与 pop 的区别在于，apply之后并不会删除stash栈区中的内容。因此，apply可以将暂存项应用到多个分支中。</p>
+</blockquote>
+<p>可以使用git stash apply + stash名字（如stash@{1}）指定恢复哪个stash到当前的工作目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br><span class="line">stash@&#123;0&#125;: On master: test2</span><br><span class="line">stash@&#123;1&#125;: On master: test1</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-git-stash-drop-名称"><a href="#6-git-stash-drop-名称" class="headerlink" title="6.git stash drop + 名称"></a>6.git stash drop + 名称</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash drop + 名称</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>从栈区中移除某个指定的stash。</p>
+</blockquote>
+<h4 id="7-git-stash-clear"><a href="#7-git-stash-clear" class="headerlink" title="7.git stash clear"></a>7.git stash clear</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash clear</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>清除栈区中保存的所有内容。</p>
+</blockquote>
+<h4 id="8-git-stash-show"><a href="#8-git-stash-show" class="headerlink" title="8.git stash show"></a>8.git stash show</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash show</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>查看栈区中最新保存的stash与当前目录的差异。</p>
+</blockquote>
+<h4 id="9-git-stash-branch"><a href="#9-git-stash-branch" class="headerlink" title="9.git stash branch"></a>9.git stash branch</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash branch</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>从最新的stash创建分支。</p>
+</blockquote>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Git 命令笔记</li>
+        <li>Post author：Jimmy</li>
+        <li>Create time：2021-10-12 15:52:58</li>
+        <li>
+            Post link：https://www.gogojimmy.top/2021/10/12/Git-命令笔记/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/12/CROC/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">CROC</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/12/zsh%20%E5%92%8C%20oh%20my%20zsh/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">zsh 和 oh my zsh</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jimmy</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E8%8E%B7%E5%8F%96SSH-Key"><span class="nav-number">1.</span> <span class="nav-text">1、获取SSH-Key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90SSH-Key"><span class="nav-number">1.1.</span> <span class="nav-text">生成SSH-Key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8BSSH-Key"><span class="nav-number">1.2.</span> <span class="nav-text">查看SSH-Key</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">2.</span> <span class="nav-text">2、设置用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%AC%E5%9C%B0%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">3、初始化本地库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E4%BB%93%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">客户仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%B7%BB%E5%8A%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">3.2.</span> <span class="nav-text">本地添加远程仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E6%9B%B4%E6%96%B0%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">4、更新到远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6%E5%9B%9E%E9%80%80"><span class="nav-number">5.</span> <span class="nav-text">5、单个文件回退</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9A%84%E6%9B%B4%E6%94%B9%E6%97%A5%E5%BF%97"><span class="nav-number">5.1.</span> <span class="nav-text">1、查看文件的更改日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9A%84%E5%85%A8%E9%83%A8%E6%9B%B4%E6%94%B9%E6%97%A5%E5%BF%97"><span class="nav-number">5.1.1.</span> <span class="nav-text">1、查看文件的全部更改日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E6%9C%80%E8%BF%91n%E6%9D%A1%E6%97%A5%E5%BF%97"><span class="nav-number">5.1.2.</span> <span class="nav-text">2、查看文件最近n条日志</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E6%96%87%E4%BB%B6%E5%B7%B2%E4%BF%AE%E6%94%B9%EF%BC%8C%E6%9C%AA%E6%9A%82%E5%AD%98%EF%BC%88%E6%9C%AA%E6%89%A7%E8%A1%8Cadd%EF%BC%89"><span class="nav-number">5.2.</span> <span class="nav-text">2、文件已修改，未暂存（未执行add）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%96%87%E4%BB%B6%E5%B7%B2%E4%BF%AE%E6%94%B9%EF%BC%8C%E5%B7%B2%E6%9A%82%E5%AD%98%EF%BC%88%E5%B7%B2%E6%89%A7%E8%A1%8Cadd%EF%BC%8C%E4%BD%86%E6%98%AF%E6%9C%AAcommit%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">3、文件已修改，已暂存（已执行add，但是未commit）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%8F%96%E6%B6%88%E6%9A%82%E5%AD%98"><span class="nav-number">5.3.1.</span> <span class="nav-text">1、取消暂存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E6%81%A2%E5%A4%8D%E5%88%B0%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="nav-number">5.3.2.</span> <span class="nav-text">2、恢复到工作区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E6%96%87%E4%BB%B6%E5%B7%B2%E6%8F%90%E4%BA%A4%EF%BC%8C%E5%9B%9E%E9%80%80%E5%88%B0%E6%9F%90%E4%B8%80%E4%B8%AA%E6%8F%90%E4%BA%A4%E8%8A%82%E7%82%B9"><span class="nav-number">5.4.</span> <span class="nav-text">4、文件已提交，回退到某一个提交节点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E5%85%88%E8%8E%B7%E5%8F%96%E8%A6%81%E5%9B%9E%E9%80%80%E7%9A%84commit-id"><span class="nav-number">5.4.1.</span> <span class="nav-text">1、先获取要回退的commit-id</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E4%BB%8E%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%AD%E6%8B%89%E5%8F%96%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">5.4.2.</span> <span class="nav-text">2、从本地版本库中拉取到暂存区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E6%94%BE%E5%BC%83%E6%9A%82%E5%AD%98%EF%BC%8C%E6%81%A2%E5%A4%8D%E5%88%B0%E5%9B%9E%E5%89%8D%E7%8A%B6%E6%80%81"><span class="nav-number">5.4.3.</span> <span class="nav-text">3、放弃暂存，恢复到回前状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81%E6%94%BE%E5%BC%83%E6%9C%AC%E5%9C%B0%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-number">5.4.4.</span> <span class="nav-text">4、放弃本地的更改</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">6.</span> <span class="nav-text">6、分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%B1%95%E7%A4%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">6.1.</span> <span class="nav-text">1、展示本地分支关联远程的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%88%97%E5%87%BA%E6%89%80%E6%9C%89%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.2.</span> <span class="nav-text">2、列出所有远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%88%97%E5%87%BA%E6%9C%AC%E5%9C%B0%E5%92%8C%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%88%86%E6%94%AF"><span class="nav-number">6.3.</span> <span class="nav-text">4、列出本地和远程的分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E4%B8%8E%E8%BF%9C%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">6.4.</span> <span class="nav-text">5、查看本地分支与远程的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">6.5.</span> <span class="nav-text">6、查看本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7%E3%80%81%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">6.6.</span> <span class="nav-text">7、创建本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8%E3%80%81%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%B0%E8%AF%A5%E5%88%86%E6%94%AF"><span class="nav-number">6.7.</span> <span class="nav-text">8、创建本地分支并切换到该分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9%E3%80%81%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">6.8.</span> <span class="nav-text">9、删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10%E3%80%81%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-number">6.9.</span> <span class="nav-text">10、切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11%E3%80%81%E5%88%9B%E5%BB%BA%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.10.</span> <span class="nav-text">11、创建远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12%E3%80%81%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.11.</span> <span class="nav-text">12、删除远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13%E3%80%81%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF"><span class="nav-number">6.12.</span> <span class="nav-text">13、关联远程分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6"><span class="nav-number">7.</span> <span class="nav-text">7、忽略文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%A0%BC%E5%BC%8F%E8%A7%84%E8%8C%83"><span class="nav-number">7.1.</span> <span class="nav-text">1、格式规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E4%BE%8B%E5%AD%90"><span class="nav-number">7.2.</span> <span class="nav-text">2、例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E5%B7%B2%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">7.3.</span> <span class="nav-text">移除已跟踪的文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81git-log"><span class="nav-number">8.</span> <span class="nav-text">8、git log</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#oneline"><span class="nav-number">8.1.</span> <span class="nav-text">oneline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%8F%98%E6%9B%B4"><span class="nav-number">8.2.</span> <span class="nav-text">显示变更</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortlog"><span class="nav-number">9.</span> <span class="nav-text">shortlog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#graph"><span class="nav-number">9.1.</span> <span class="nav-text">graph</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E3%80%81rebase"><span class="nav-number">10.</span> <span class="nav-text">10、rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-git-pull"><span class="nav-number">10.1.</span> <span class="nav-text">1.git pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-merge-%E5%92%8C-rebase"><span class="nav-number">10.2.</span> <span class="nav-text">2.merge 和 rebase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-rebase%E5%A5%BD%E5%A4%84"><span class="nav-number">10.3.</span> <span class="nav-text">3.rebase好处</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E3%80%81stash%E6%9A%82%E5%AD%98"><span class="nav-number">11.</span> <span class="nav-text">10、stash暂存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9C%BA%E6%99%AF"><span class="nav-number">11.1.</span> <span class="nav-text">1.场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">11.2.</span> <span class="nav-text">2.使用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-git-stash"><span class="nav-number">11.2.1.</span> <span class="nav-text">1.git stash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-git-stash-save"><span class="nav-number">11.2.2.</span> <span class="nav-text">2.git stash save</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-git-stash-list"><span class="nav-number">11.2.3.</span> <span class="nav-text">3.git stash list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-git-stash-pop"><span class="nav-number">11.2.4.</span> <span class="nav-text">4.git stash pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-git-stash-apply"><span class="nav-number">11.2.5.</span> <span class="nav-text">5.git stash apply</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-git-stash-drop-%E5%90%8D%E7%A7%B0"><span class="nav-number">11.2.6.</span> <span class="nav-text">6.git stash drop + 名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-git-stash-clear"><span class="nav-number">11.2.7.</span> <span class="nav-text">7.git stash clear</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-git-stash-show"><span class="nav-number">11.2.8.</span> <span class="nav-text">8.git stash show</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-git-stash-branch"><span class="nav-number">11.2.9.</span> <span class="nav-text">9.git stash branch</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>

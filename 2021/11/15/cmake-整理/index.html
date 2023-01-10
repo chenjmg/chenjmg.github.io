@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Jimmy">
+    
+    <title>
+        
+            常用 cmake 笔记 |
+        
+        积   木
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/logo.png","favicon":"/images/logo.png","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"不积硅步，无以至千里。不积小流，无以成江海。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":false},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                积   木
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                全部
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">全部</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">常用 cmake 笔记</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/logo.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Jimmy</span>
+                        
+                            <span class="author-label">Author</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-15 19:53:03
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/cmake/">cmake</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h1><p>cmake 是一个跨平台的软件编译工具，依赖 <code>CMakeLists.txt</code> 文件，最少 3 条语句即可完成一个项目的编译。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cmake [选项] &lt;源码路径&gt;</span><br><span class="line">cmake [选项] &lt;现有构建路径&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><ul>
+<li><p>-C &lt;initial-cache&gt; </p>
+<p>  预加载一个脚本填充缓存文件。</p>
+<p>  用来加载 CMakeCache.txt 文件。该文件会在第一次构建时创建。-C 选项可以用来指定一个文件，在第一次解析工程的 cmake 清单文件时，从这个文件加载缓存条目信息。</p>
+</li>
+<li><p>-D &lt;var&gt;:&lt;type&gt;=&lt;value&gt;</p>
+<p>  创建一个 CMake 的缓存条目。</p>
+<p>  当 cmake 第一次运行于一个空的构建数时，它会创建一个 CMakeCache.txt 文件，并且使用可定制的工程设置来填充这个文件。这个选项可以用来指定优先级高于工程的默认值的工程设置值。这个参数可以被重复多次，用来填充所需要数量的缓存条目(cache entries)。</p>
+</li>
+<li><p>-U &lt;globbing_expr&gt;</p>
+<p>  从 CMake 缓存文件中删除一个匹配的条目。</p>
+</li>
+<li><p>-G &lt;generator-name&gt;</p>
+<p>  指定一个 makefile 生成工具。</p>
+</li>
+<li><p>-Wno-dev</p>
+<p>  抑制开发者警告。</p>
+</li>
+<li><p>Wdv</p>
+<p>  使能开发者警告。</p>
+</li>
+</ul>
+<h1 id="最简单的cmake-单个文件"><a href="#最简单的cmake-单个文件" class="headerlink" title="最简单的cmake - 单个文件"></a>最简单的cmake - 单个文件</h1><p>假设有一个简单的项目 <code>sum</code>，它的作用是用来求两数之和，整个项目就只需要一个源文件，文件的内容如下。</p>
+<blockquote>
+<p>main.cpp</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @file   main.cpp</span></span><br><span class="line"><span class="comment"> * @brief  main 文件</span></span><br><span class="line"><span class="comment"> * @encode UTF-8</span></span><br><span class="line"><span class="comment"> * @log    date        author      notes</span></span><br><span class="line"><span class="comment"> *         2021.11.15  Jimmy       first version</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  calculate the sum of two numbers</span></span><br><span class="line"><span class="comment"> * @param  a                </span></span><br><span class="line"><span class="comment"> * @param  b                </span></span><br><span class="line"><span class="comment"> * @return int  </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">calculateSum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp; a, <span class="keyword">const</span> <span class="keyword">int</span> &amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (a + b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  main function</span></span><br><span class="line"><span class="comment"> * @param  argc             </span></span><br><span class="line"><span class="comment"> * @param  argv             </span></span><br><span class="line"><span class="comment"> * @return int </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;calculate the sum of two numbers\r\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">9</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="built_in">calculateSum</span>(a, b);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d + %d = %d\n&quot;</span>, a, b, sum);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* End of file */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>编写完代码后，我们需要在目录下创建一个 <code>CMakeLists.txt</code> 文件.</p>
+<p>此时，项目的文件结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TopDir/</span><br><span class="line">    ┣━ main.cpp</span><br><span class="line">    ┗━ CMakeLists.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>CMakeLists.txt</p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定 cmake 所需的最小版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名称，决定了执行文件的名称</span></span><br><span class="line"><span class="keyword">project</span>(sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译成可执行文件，源文件为 main.cpp</span></span><br><span class="line"><span class="keyword">add_executable</span>(sum main.cpp)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>当前的这个 CMakeLists.txt 文件是完成一个 cmake 所需的最少语句。</p>
+<p>它表明了：</p>
+<ul>
+<li>编译当前的代码所需要的版本 <code>cmake_minimum_required</code>；</li>
+<li>该项目的名称 <code>project</code> ；</li>
+<li>将该项目编译成的类型是一个可执行文件 <code>add_executable</code> ；</li>
+<li>完成该可执行文件的编译需要的源文件。</li>
+</ul>
+<p>add_executable 可以是添加多个文件，比如：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(sum file1.cpp file2.cpp file3.cpp)</span><br></pre></td></tr></table></figure>
+
+<p>也可以直接用变量的方式来表示当前的项目名称。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)</span><br></pre></td></tr></table></figure>
+
+<h2 id="cmake-编译"><a href="#cmake-编译" class="headerlink" title="cmake 编译"></a>cmake 编译</h2><p>在 CMakeLists.txt 的同级目录下创建一个文件夹 <code>build/</code> ，进入到文件夹下，执行 cmake 命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cmake ..</span><br></pre></td></tr></table></figure>
+
+<p>执行完之后，编译。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行代码"><a href="#执行代码" class="headerlink" title="执行代码"></a>执行代码</h2><p>默认生成的执行文件在 <code>build/</code> 目录下。执行。</p>
+<h1 id="多个文件"><a href="#多个文件" class="headerlink" title="多个文件"></a>多个文件</h1><p>还是项目 <code>sum</code> ，但是现在打算把函数 <code>calculateSum</code> 独立出来，形成一个单独的模块。</p>
+<p>项目的文件结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sum/</span><br><span class="line">    ┣━ main.cpp</span><br><span class="line">    ┣━ CSum.cpp</span><br><span class="line">    ┣━ CSum.h</span><br><span class="line">    ┗━ CMakeLists.txt</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>项目的代码如下：</p>
+<blockquote>
+<p>CSum.cpp</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @file   CSum.cpp</span></span><br><span class="line"><span class="comment"> * @brief  求和模块</span></span><br><span class="line"><span class="comment"> * @encode UTF-8</span></span><br><span class="line"><span class="comment"> * @log    date        author      notes</span></span><br><span class="line"><span class="comment"> *         2021.11.15  Jimmy       first version</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;CSum.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  Construct a new CSum::CSum object</span></span><br><span class="line"><span class="comment"> * @author Jimmy </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">CSum::<span class="built_in">CSum</span>()</span><br><span class="line">&#123;</span><br><span class="line">    m_a = <span class="number">0</span>;</span><br><span class="line">    m_b = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  Construct a new CSum::CSum object</span></span><br><span class="line"><span class="comment"> * @param  a                </span></span><br><span class="line"><span class="comment"> * @param  b                </span></span><br><span class="line"><span class="comment"> * @author Jimmy </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">CSum::<span class="built_in">CSum</span>(<span class="keyword">const</span> <span class="keyword">int</span> a, <span class="keyword">const</span> <span class="keyword">int</span> b)</span><br><span class="line">&#123;</span><br><span class="line">    m_a = a;</span><br><span class="line">    m_b = b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  set number</span></span><br><span class="line"><span class="comment"> * @param  a                </span></span><br><span class="line"><span class="comment"> * @param  b                </span></span><br><span class="line"><span class="comment"> * @author Jimmy </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CSum::setSumNum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp; a, <span class="keyword">const</span> <span class="keyword">int</span> &amp; b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    m_a = a;</span><br><span class="line">    m_b = b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  get sum</span></span><br><span class="line"><span class="comment"> * @return int </span></span><br><span class="line"><span class="comment"> * @author Jimmy </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">CSum::getSumOfNum</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (m_a + m_b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* End of file */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>CSum.h</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @file   CSum.h</span></span><br><span class="line"><span class="comment"> * @brief  求和模块头文件</span></span><br><span class="line"><span class="comment"> * @encode UTF-8</span></span><br><span class="line"><span class="comment"> * @log    date        author      notes</span></span><br><span class="line"><span class="comment"> *         2021.11.15  Jimmy       first version</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CSum</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">CSum</span>();</span><br><span class="line"></span><br><span class="line">        <span class="built_in">CSum</span>(<span class="keyword">const</span> <span class="keyword">int</span> a, <span class="keyword">const</span> <span class="keyword">int</span> b);</span><br><span class="line"></span><br><span class="line">        ~<span class="built_in">CSum</span>() &#123;&#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">setSumNum</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> &amp; a, <span class="keyword">const</span> <span class="keyword">int</span> &amp; b)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">getSumOfNum</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> m_a;</span><br><span class="line">        <span class="keyword">int</span> m_b;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* End of file */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<blockquote>
+<p>main.cpp</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @file   main.cpp</span></span><br><span class="line"><span class="comment"> * @brief  main 文件</span></span><br><span class="line"><span class="comment"> * @encode UTF-8</span></span><br><span class="line"><span class="comment"> * @log    date        author      notes</span></span><br><span class="line"><span class="comment"> *         2021.11.15  Jimmy       first version</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;CSum.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @brief  main function</span></span><br><span class="line"><span class="comment"> * @param  argc             </span></span><br><span class="line"><span class="comment"> * @param  argv             </span></span><br><span class="line"><span class="comment"> * @return int </span></span><br><span class="line"><span class="comment"> * @date   2021.11.15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;calculate the sum of two numbers\r\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>, b = <span class="number">9</span>;  </span><br><span class="line"></span><br><span class="line">    <span class="function">CSum <span class="title">cls_sum</span><span class="params">(a, b)</span></span>; </span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d + %d = %d\n&quot;</span>, a, b, cls_sum.<span class="built_in">getSumOfNum</span>());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* End of file */</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>我们需要修改一下 <code>CMakeLists.txt</code> 文件。</p>
+<p>最简单的修改方式是，修改编译可执行文件的依赖头文件即可，即：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> main.cpp CSum.cpp)</span><br></pre></td></tr></table></figure>
+
+<p>这样操作的一个缺点是，每次增加一个文件，就得修改一次 <code>CMakeLists.txt</code> 文件，并非是一个好办法。</p>
+<p>可以使用 <code>aux_source_directory</code> :</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span> SRC)</span><br></pre></td></tr></table></figure>
+
+<p>它的作用是，将 <code>CMakeLists.txt</code> 目录下的所有源文件都添加到 <code>SRC</code> 变量中。而如果你要使用变量的值，就可以这样操作：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> $&#125;&#123;SRC&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>于是，修改后的 <code>CMakeLists.txt</code> 文件就成了这样子：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定 cmake 所需的最小版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名称，决定了执行文件的名称</span></span><br><span class="line"><span class="keyword">project</span>(sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将目录下的头文件都添加到 SRC 变量中</span></span><br><span class="line"><span class="keyword">aux_source_directory</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span> SRC)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译成可执行文件，源文件为 main.cpp</span></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SRC&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="多个文件夹"><a href="#多个文件夹" class="headerlink" title="多个文件夹"></a>多个文件夹</h1><p>但是这个时候你觉得很多个源文件放在同级目录下太过杂乱，想把每个模块归类到模块目录下。于是，你把项目的文件结构修改成这样：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TopDir/</span><br><span class="line">    ┣━ main.cpp</span><br><span class="line">    ┗━ sum/</span><br><span class="line">        ┣━ CSum.cpp</span><br><span class="line">        ┗━ CSum.h</span><br></pre></td></tr></table></figure>
+
+<p>对于这种情况，需要先在每个模块的目录下创建一个 <code>CMakeLists.txt</code> 文件，并且将模块编译成库，可以选择编译成静态库或者动态库。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">TopDir/</span><br><span class="line">    ┣━ main.cpp</span><br><span class="line">    ┣━ CMakeLists.txt</span><br><span class="line">    ┗━ sum/</span><br><span class="line">        ┣━ CMakeLists.txt</span><br><span class="line">        ┣━ CSum.cpp</span><br><span class="line">        ┗━ CSum.h</span><br></pre></td></tr></table></figure>
+
+<h2 id="编译成静态库"><a href="#编译成静态库" class="headerlink" title="编译成静态库"></a>编译成静态库</h2><p>需要在模块的目录下创建一个 <code>CMakeLists.txt</code> 文件。</p>
+<p>sum/ 下的 CMakeLists.txt 可以这么写：</p>
+<blockquote>
+<p>sum/CMakeLists.txt</p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定 cmake 所需的最小版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.16</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名称，决定了执行文件的名称</span></span><br><span class="line"><span class="keyword">project</span>(sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将目录下的头文件都添加到 SRC 变量中</span></span><br><span class="line"><span class="keyword">aux_source_directory</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span> SRC)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译成静态库 STATIC</span></span><br><span class="line"><span class="keyword">add_library</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> STATIC <span class="variable">$&#123;SRC&#125;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在 CMakeLists.txt 中，指定了该模块编程成静态库，<code>add_library($&#123;PROJECT_NAME&#125; STATIC $&#123;SRC&#125;)</code> 。其中，<code>STATIC</code> 指的是生成静态库，<code>SHARED</code> 指的是生成动态库。</p>
+<p>主 <code>CMakeLists.txt</code> 要将该该模块生成的库文件包含进来。</p>
+<blockquote>
+<p>CMakeLists.txt</p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定 cmake 所需的最小版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.16</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名称，决定了执行文件的名称</span></span><br><span class="line"><span class="keyword">project</span>(demo)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将目录下的头文件都添加到 SRC 变量中</span></span><br><span class="line"><span class="keyword">aux_source_directory</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span> SRC)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加模块文件夹</span></span><br><span class="line"><span class="keyword">add_subdirectory</span>(sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(</span><br><span class="line">    <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/sum</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接库的搜索路径</span></span><br><span class="line"><span class="comment"># 必须在 target_link_libraries 前面</span></span><br><span class="line"><span class="keyword">link_directories</span>(</span><br><span class="line">    <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/sum</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译成可执行文件，源文件为 main.cpp</span></span><br><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> <span class="variable">$&#123;SRC&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加依赖</span></span><br><span class="line"><span class="keyword">add_dependencies</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译链接的库</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span></span><br><span class="line">    sum</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>在文件中，CMakeLists.txt 指明了：</p>
+<ul>
+<li>编译该项目，需要包含该模块的文件夹 <code>add_subdirectory</code> ;</li>
+<li>链接库的搜索路径 <code>link_directories</code> ；</li>
+<li>链接的库名称 <code>target_link_libraries</code>, 其中，搜索路径必须在库名称之前。</li>
+</ul>
+<h2 id="编译成动态库"><a href="#编译成动态库" class="headerlink" title="编译成动态库"></a>编译成动态库</h2><p>编译成动态库，只需要在库生成的类型中指定为动态库就行。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 编译成静态库 STATIC</span></span><br><span class="line"><span class="keyword">add_library</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> SHARED <span class="variable">$&#123;SRC&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>CMakeLists.txt</p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定 cmake 所需的最小版本</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.16</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置项目名称，决定了执行文件的名称</span></span><br><span class="line"><span class="keyword">project</span>(sum)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将目录下的头文件都添加到 SRC 变量中</span></span><br><span class="line"><span class="keyword">aux_source_directory</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span> SRC)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 搜索头文件</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译成静态库 STATIC</span></span><br><span class="line"><span class="keyword">add_library</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span> SHARED <span class="variable">$&#123;SRC&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>如果没有修改编译生成的路径，则会在默认的路径下生成一个 libxxx.so 文件。</p>
+<p>这个示例下，可以在 <code>build/sum/</code> 下看到一个 <code>libsum.so</code> 文件。程序运行需要依赖该库文件。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>make install</code> 指定在安装时要运行的规则。在某一源文件路径中，调用这条命令所指定的规则会在安装时按顺序执行。</p>
+<h2 id="公共属性"><a href="#公共属性" class="headerlink" title="公共属性"></a>公共属性</h2><h3 id="DESTINATION"><a href="#DESTINATION" class="headerlink" title="DESTINATION"></a>DESTINATION</h3><p>DESTINATION 选项指定了一个文件会安装到磁盘的哪个路径下。</p>
+<ul>
+<li>如果指定的是全路径（以反斜杠或者驱动器名开头），它会被直接使用；</li>
+<li>如果指定的是相对路径，它会被解释为相对于 CMAKE_INSTALL_PREFIX 的值的相对路径；</li>
+</ul>
+<h3 id="PERMISSIONS"><a href="#PERMISSIONS" class="headerlink" title="PERMISSIONS"></a>PERMISSIONS</h3><p>PERMISSIONS 选项指定了安装文件需要的权限。</p>
+<p>合法权限有：</p>
+<ul>
+<li>OWNER_READ</li>
+<li>OWNER_WRITE</li>
+<li>OWNER_EXECUTE</li>
+<li>GROUP_READ</li>
+<li>GROUP_WRITE</li>
+<li>GROUP_EXECUTE</li>
+<li>WORLD_READ</li>
+<li>WORLD_WRITE</li>
+<li>WORLD_EXECUTE</li>
+<li>SETUID</li>
+<li>SETGID</li>
+</ul>
+<h3 id="CONFIGURATIONS"><a href="#CONFIGURATIONS" class="headerlink" title="CONFIGURATIONS"></a>CONFIGURATIONS</h3><p>CONFIGURATIONS 选项指定了该安装规则将会加上一系列构建配置，Debug 和 Release 等。</p>
+<h3 id="COMPONENT"><a href="#COMPONENT" class="headerlink" title="COMPONENT"></a>COMPONENT</h3><p>COMPONENT 选项指定了该安装规则相关的一个安装部件的名字。</p>
+<h3 id="RENAME"><a href="#RENAME" class="headerlink" title="RENAME"></a>RENAME</h3><p>RENAME 选项重命名一个已经安装的文件。</p>
+<h3 id="OPTIONAL"><a href="#OPTIONAL" class="headerlink" title="OPTIONAL"></a>OPTIONAL</h3><p>OPTIONAL 选项指定当安装的文件不存在时，不会导致错误。</p>
+<h2 id="TARGET-版本的-install-命令"><a href="#TARGET-版本的-install-命令" class="headerlink" title="TARGET 版本的 install 命令"></a>TARGET 版本的 install 命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(TARGETS targets... [<span class="keyword">EXPORT</span> &lt;<span class="keyword">export</span>-name&gt;] </span><br><span class="line"></span><br><span class="line">            [</span><br><span class="line">                [ARCHIVE|LIBRARY|RUNTIME|FRAMEWORK|BUNDLE|             </span><br><span class="line">                PRIVATE_HEADER|PUBLIC_HEADER|RESOURCE]            </span><br><span class="line">                [DESTINATION &lt;dir&gt;]            </span><br><span class="line">                [PERMISSIONS permissions...]            </span><br><span class="line">                [CONFIGURATIONS [Debug|Release|...]</span><br><span class="line">            ]   </span><br><span class="line"></span><br><span class="line">            [COMPONENT &lt;component&gt;] </span><br><span class="line">            [OPTIONAL] [NAMELINK_ONLY|NAMELINK_SKIP] ] [...]) </span><br></pre></td></tr></table></figure>
+
+<p><code>TARGET</code> 指定的几种安装文件的类型：</p>
+<table>
+<thead>
+<tr>
+<th align="center">目标文件类型</th>
+<th align="center">内容</th>
+<th align="center">安装目录变量</th>
+<th align="center">默认安装文件夹</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ARCHIVE</td>
+<td align="center">静态库</td>
+<td align="center">${CMAKE_INSTALL_LIBDIR}</td>
+<td align="center">lib</td>
+</tr>
+<tr>
+<td align="center">LIBRARY</td>
+<td align="center">动态库</td>
+<td align="center">${CMAKE_INSTALL_LIBDIR}</td>
+<td align="center">lib</td>
+</tr>
+<tr>
+<td align="center">RUNTIME</td>
+<td align="center">执行的二进制文件</td>
+<td align="center">${CMAKE_INSTALL_BINDIR}</td>
+<td align="center">bin</td>
+</tr>
+<tr>
+<td align="center">PRIVATE_HEADER</td>
+<td align="center">与库关联的PRIVATE头文件</td>
+<td align="center">${CMAKE_INSTALL_INCLUDEDIR}</td>
+<td align="center">include</td>
+</tr>
+<tr>
+<td align="center">PUBLIC_HEADER</td>
+<td align="center">与库关联的PUBLIC头文件</td>
+<td align="center">${CMAKE_INSTALL_INCLUDEDIR}</td>
+<td align="center">include</td>
+</tr>
+</tbody></table>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(TARGETS <span class="variable">$&#123;PROJECT_NAME&#125;</span></span><br><span class="line">    RUNTIME DESTINATION bin</span><br><span class="line">    LIBRARY DESTINATION lib</span><br><span class="line">    ARCHIVE DESTINATION lib</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>可以修改 <code>TARGET</code> 的安装目录。</p>
+<ol>
+<li>一种是在执行 <code>cmake .. </code> 时使用变量 <code>CMAKE_INSTALL_PREFIX</code> 指定；</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -DCMAKE_INSTALL_PREFIX=../usr/</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>一种是在 <code>CMakeLists.txt</code> 文件中指定路径名称</li>
+</ol>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(DEMO_DIR                          <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/usr)</span><br><span class="line"><span class="keyword">set</span>(DEMO_INCLUDE_DIR                  <span class="variable">$&#123;DEMO_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">set</span>(DEMO_LIB_DIR                      <span class="variable">$&#123;DEMO_DIR&#125;</span>/lib)</span><br><span class="line"><span class="keyword">set</span>(DEMO_BIN_DIR                      <span class="variable">$&#123;DEMO_DIR&#125;</span>/bin)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(TARGETS <span class="variable">$&#123;PROJECT_NAME&#125;</span></span><br><span class="line">    RUNTIME DESTINATION <span class="variable">$&#123;DEMO_DIR&#125;</span>/bin</span><br><span class="line">    LIBRARY DESTINATION <span class="variable">$&#123;DEMO_DIR&#125;</span>/lib</span><br><span class="line">    ARCHIVE DESTINATION <span class="variable">$&#123;DEMO_DIR&#125;</span>/lib</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="FILES-版本的-install-命令"><a href="#FILES-版本的-install-命令" class="headerlink" title="FILES 版本的 install 命令"></a>FILES 版本的 install 命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(FILES files... </span><br><span class="line">        DESTINATION &lt;dir&gt; </span><br><span class="line">        [PERMISSIONS permissions...] </span><br><span class="line">        [CONFIGURATIONS [Debug|Release|...]] </span><br><span class="line">        [COMPONENT &lt;component&gt;] </span><br><span class="line">        [RENAME &lt;name&gt;] </span><br><span class="line">        [OPTIONAL]</span><br><span class="line">    ) </span><br></pre></td></tr></table></figure>
+
+<p>FILE 版本的 install 命令可以用来安装一些库文件的头文件，系统所需的配置文件等。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(FILES </span><br><span class="line">    CSum.h</span><br><span class="line">    DESTINATION <span class="variable">$&#123;DEMO_DIR&#125;</span>/<span class="keyword">include</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p>如果没有指定 <code>PERMISSIONS</code> 选项，则默认的属性是 OWNER_WRITE，OWNER_READ，GROUP_READ，和WORLD_READ的权限。</p>
+<h2 id="PROGRAMS-版本的-install-命令"><a href="#PROGRAMS-版本的-install-命令" class="headerlink" title="PROGRAMS 版本的 install 命令"></a>PROGRAMS 版本的 install 命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(PROGRAMS files... </span><br><span class="line">        DESTINATION &lt;dir&gt; </span><br><span class="line">        [PERMISSIONS permissions...] </span><br><span class="line">        [CONFIGURATIONS [Debug|Release|...]] </span><br><span class="line">        [COMPONENT &lt;component&gt;] </span><br><span class="line">        [RENAME &lt;name&gt;] </span><br><span class="line">        [OPTIONAL]</span><br><span class="line">    ) </span><br></pre></td></tr></table></figure>
+
+<p>PROGRAMS 版本与 FILES 版本一样，只在默认权限上有所不同：它还包括了 OWNER_EXECUTE，GROUP_EXECUTE 和 WORLD_EXECUTE 选项。INSTALL 的这个版本用来安装不是目标的程序，比如 shell 脚本。使用 TARGETS 格式安装该工程内部构建的目标。</p>
+<h2 id="DIRECTORY-版本的-install-命令"><a href="#DIRECTORY-版本的-install-命令" class="headerlink" title="DIRECTORY 版本的 install 命令"></a>DIRECTORY 版本的 install 命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(DIRECTORY dirs... </span><br><span class="line">        DESTINATION &lt;dir&gt; </span><br><span class="line">        [FILE_PERMISSIONS permissions...] </span><br><span class="line">        [DIRECTORY_PERMISSIONS permissions...] </span><br><span class="line">        [USE_SOURCE_PERMISSIONS] </span><br><span class="line">        [OPTIONAL] </span><br><span class="line">        [CONFIGURATIONS [Debug|Release|...]] </span><br><span class="line">        [COMPONENT &lt;component&gt;] </span><br><span class="line">        [FILES_MATCHING] </span><br><span class="line">        [[PATTERN &lt;pattern&gt; | REGEX &lt;regex&gt;]            </span><br><span class="line">        [EXCLUDE] </span><br><span class="line">        [PERMISSIONS permissions...]] [...]) </span><br></pre></td></tr></table></figure>
+
+<h2 id="SCRIPT-和-CODE-版本的-install-命令"><a href="#SCRIPT-和-CODE-版本的-install-命令" class="headerlink" title="SCRIPT 和 CODE 版本的 install 命令"></a>SCRIPT 和 CODE 版本的 install 命令</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>([[SCRIPT &lt;<span class="keyword">file</span>&gt;] [CODE &lt;code&gt;]] [...])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>SCRIPT 格式将会在安装期间调用给定的脚本文件；</li>
+<li>CODE 格式将会在安装期间调用给定的 CMake 代码。其中，代码用双引号括起来。</li>
+</ul>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(CODE <span class="string">&quot;MESSAGE(\&quot;module sum install finish\&quot;)&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="message-打印消息"><a href="#message-打印消息" class="headerlink" title="message 打印消息"></a>message 打印消息</h1><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">message</span>([STATUS|WARNING|AUTHOR_WARNING|FATAL_ERROR|SEND_ERROR] <span class="string">&quot;message to display&quot;</span> ...) </span><br></pre></td></tr></table></figure>
+
+<p>指定消息类型：</p>
+<table>
+<thead>
+<tr>
+<th align="right">关键字</th>
+<th align="left">类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">(无)</td>
+<td align="left">重要消息</td>
+</tr>
+<tr>
+<td align="right">STATUS</td>
+<td align="left">非常重要</td>
+</tr>
+<tr>
+<td align="right">WARNING</td>
+<td align="left">CMake 警告，会继续执行</td>
+</tr>
+<tr>
+<td align="right">AUTHOR_WARNING</td>
+<td align="left">CMake 警告（dev），会继续执行</td>
+</tr>
+<tr>
+<td align="right">FATAL_ERROR</td>
+<td align="left">CMake 错误，终止所有处理过程</td>
+</tr>
+<tr>
+<td align="right">SEND_ERROR</td>
+<td align="left">CMake 错误，继续执行，但是会跳过生成的步骤</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：常用 cmake 笔记</li>
+        <li>Post author：Jimmy</li>
+        <li>Create time：2021-11-15 19:53:03</li>
+        <li>
+            Post link：https://www.gogojimmy.top/2021/11/15/cmake-整理/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/02/20/%E4%B8%A4%E7%82%B9%E9%97%B4%E7%9A%84%E8%B7%9D%E7%A6%BB%E8%AE%A1%E7%AE%97/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">移动机器人开发之两点间的距离计算</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%BA%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%A0%91/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数据结构于算法之树</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Jimmy</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CMake"><span class="nav-number">1.</span> <span class="nav-text">CMake</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E9%A1%B9"><span class="nav-number">1.2.</span> <span class="nav-text">选项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84cmake-%E5%8D%95%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">最简单的cmake - 单个文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmake-%E7%BC%96%E8%AF%91"><span class="nav-number">2.1.</span> <span class="nav-text">cmake 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="nav-number">2.2.</span> <span class="nav-text">执行代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">多个文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">4.</span> <span class="nav-text">多个文件夹</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%88%90%E9%9D%99%E6%80%81%E5%BA%93"><span class="nav-number">4.1.</span> <span class="nav-text">编译成静态库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E6%88%90%E5%8A%A8%E6%80%81%E5%BA%93"><span class="nav-number">4.2.</span> <span class="nav-text">编译成动态库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">5.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AC%E5%85%B1%E5%B1%9E%E6%80%A7"><span class="nav-number">5.1.</span> <span class="nav-text">公共属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DESTINATION"><span class="nav-number">5.1.1.</span> <span class="nav-text">DESTINATION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PERMISSIONS"><span class="nav-number">5.1.2.</span> <span class="nav-text">PERMISSIONS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONFIGURATIONS"><span class="nav-number">5.1.3.</span> <span class="nav-text">CONFIGURATIONS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMPONENT"><span class="nav-number">5.1.4.</span> <span class="nav-text">COMPONENT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RENAME"><span class="nav-number">5.1.5.</span> <span class="nav-text">RENAME</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OPTIONAL"><span class="nav-number">5.1.6.</span> <span class="nav-text">OPTIONAL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TARGET-%E7%89%88%E6%9C%AC%E7%9A%84-install-%E5%91%BD%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">TARGET 版本的 install 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FILES-%E7%89%88%E6%9C%AC%E7%9A%84-install-%E5%91%BD%E4%BB%A4"><span class="nav-number">5.3.</span> <span class="nav-text">FILES 版本的 install 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROGRAMS-%E7%89%88%E6%9C%AC%E7%9A%84-install-%E5%91%BD%E4%BB%A4"><span class="nav-number">5.4.</span> <span class="nav-text">PROGRAMS 版本的 install 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DIRECTORY-%E7%89%88%E6%9C%AC%E7%9A%84-install-%E5%91%BD%E4%BB%A4"><span class="nav-number">5.5.</span> <span class="nav-text">DIRECTORY 版本的 install 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCRIPT-%E5%92%8C-CODE-%E7%89%88%E6%9C%AC%E7%9A%84-install-%E5%91%BD%E4%BB%A4"><span class="nav-number">5.6.</span> <span class="nav-text">SCRIPT 和 CODE 版本的 install 命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#message-%E6%89%93%E5%8D%B0%E6%B6%88%E6%81%AF"><span class="nav-number">6.</span> <span class="nav-text">message 打印消息</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
